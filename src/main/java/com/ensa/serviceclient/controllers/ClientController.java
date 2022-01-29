@@ -15,8 +15,8 @@ import java.util.Collection;
 public class ClientController {
         private ClientService clientService;
 
-        @GetMapping("/historique")
-        ResponseEntity<Collection<Transfer>> getHistorique(Long id){
+        @GetMapping("/historique/{id}")
+        ResponseEntity<Collection<Transfer>> getHistorique(@PathVariable Long id){
                 return new ResponseEntity<>(clientService.getHistorique(id), HttpStatus.OK);
         }
 
